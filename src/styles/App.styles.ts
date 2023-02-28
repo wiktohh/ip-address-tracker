@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 import bgc from "../assets/pattern-bg-desktop.png"
 
-interface Form{
-    onSubmit: any
-};
-
 export const Header = styled.header`
 background-image: url(${bgc});
 background-position: center;
@@ -23,7 +19,7 @@ font-size: 32px;
 line-height: 2rem; 
 font-weight: bold; 
 `
-export const Form = styled.form<Form>`
+export const Form = styled.form`
   display:flex;
   max-width: 36rem;
   width: 90%;
