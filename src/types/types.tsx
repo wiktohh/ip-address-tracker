@@ -1,4 +1,4 @@
-export interface MapInterface{
+export interface InfoInterface{
     info: 
     {ip: string;
     location: {

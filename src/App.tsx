@@ -6,6 +6,7 @@ import { ReactComponent as ArrowIcon } from './assets/icon-arrow.svg';
 import {Header, H1, Form, Input, Button} from "./styles/App.styles"
 import axios from 'axios'
 import Map from "./Map"
+import InfoSection from './components/InfoSection';
 import 'leaflet/dist/leaflet.css'
 
 
@@ -77,7 +78,7 @@ function App() {
           <Input type="text" placeholder='Search for any IP address or domain' name="address" value={input} onChange={handleOnChange}/>
           <Button type="submit"><ArrowIcon/></Button>
         </Form>
- 
+        <InfoSection info={info}/>
       </Header>
       <main>
       <MapContainer zoomControl={false} style={{width:"100vw", height:"100vh"}}>
