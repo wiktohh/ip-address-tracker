@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import bgc from "./assets/pattern-bg-desktop.png"
-import { ReactComponent as ArrowIcon } from './assets/icon-arrow.svg';
-import {Header, H1, Form, Input, Button} from "./styles/App.styles"
 import axios from 'axios'
 import Map from "./Map"
 import InfoSection from './components/InfoSection';
+
+import { MapContainer} from 'react-leaflet';
+
+import {Header, H1, Form, Input, Button} from "./styles/App.styles"
 import 'leaflet/dist/leaflet.css'
+import './App.css';
 
-
-import styled from 'styled-components'
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-
-
+import { ReactComponent as ArrowIcon } from './assets/icon-arrow.svg';
 
 function App() {
 
@@ -72,7 +68,7 @@ function App() {
 
   return (
     <>
-      <Header>
+      <Header style={{width:"100vw", height:"30vh"}}>
         <H1>IP Address Tracker</H1>
         <Form onSubmit={handleSubmit}>
           <Input type="text" placeholder='Search for any IP address or domain' name="address" value={input} onChange={handleOnChange}/>
@@ -81,7 +77,7 @@ function App() {
         <InfoSection info={info}/>
       </Header>
       <main>
-      <MapContainer zoomControl={false} style={{width:"100vw", height:"100vh"}}>
+      <MapContainer zoomControl={false} style={{width:"100vw", height:"70vh"}}>
             <Map info={info} />
       </MapContainer>
       </main>
