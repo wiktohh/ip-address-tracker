@@ -59,12 +59,13 @@ function App() {
       return; 
     }
 
+    console.log(process.env.REACT_APP_API_KEY);
+
     console.log(input);
-    const res = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=at_Te8eTEKo9BxEJzfDEbMA5uGBc50mL&${isDomain ? 'domain' : 'ipAddress'}=${input}`)
+    const res = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&${isDomain ? 'domain' : 'ipAddress'}=${input}`)
     setInfo(res.data)
 
   }
-  
 
   return (
     <>
